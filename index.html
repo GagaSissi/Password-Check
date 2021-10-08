@@ -12,33 +12,44 @@
       <header>
         <h1>Password Check</h1>
       </header>
-
-      <form action="passwordInput">
-        <label for="pass"></label><br />
-        <input
-          type="password"
-          id="pass1"
-          minlength="10"
-          required
-          placeholder="Passwort"
-        /><br />
-        <label for="pass"></label><br />
-        <input
-          type="password"
-          id="pass2"
-          minlength="10"
-          required
-          placeholder="Passwort 2nd time"
-        /><br />
-        <br />
-        <button type="submit" id="btn">Show Password</button>
-      </form>
       <article>
-        <p id="equal">Passwords are equal <input type="checkbox" /></p>
-        <p id="lower">Lower Case Letters <input type="checkbox" /></p>
-        <p id="upper">Upper Case Letters <input type="checkbox" /></p>
-        <p id="numb">Contains Numbers <input type="checkbox" /></p>
-        <p id="chara">At least 10 characters long <input type="checkbox" /></p>
+        <section>
+          <form action="passwordInput">
+            <label for="pass"></label><br />
+            <input
+              type="password"
+              id="pass1"
+              minlength="10"
+              required
+              placeholder="Passwort"
+            /><br />
+            <label for="pass"></label><br />
+            <input
+              type="password"
+              id="pass2"
+              minlength="10"
+              required
+              placeholder="Passwort 2nd time"
+            /><br />
+            <br />
+            <!-- input
+          type="button"
+          href="#"
+          onclick="ansValidation(event)"
+          value="Sign Up"
+          />-->
+            <button type="submit" id="btn">Show Password</button>
+          </form>
+        </section>
+        <section>
+          <p id="equal">Passwords are equal <input type="checkbox" /></p>
+          <p id="lower">Lower Case Letters <input type="checkbox" /></p>
+          <p id="upper">Upper Case Letters <input type="checkbox" /></p>
+          <p id="numb">Contains Numbers <input type="checkbox" /></p>
+          <p id="chara">
+            At least 10 characters long <input type="checkbox" />
+          </p>
+        </section>
       </article>
     </main>
     <script src="script.js"></script>
