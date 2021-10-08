@@ -16,7 +16,7 @@
         <h1>Password Check</h1>
       </header>
       <article>
-        <section>
+        <section class="firstLay">
           <form action="passwordInput">
             <label for="pass"></label><br />
             <input
@@ -24,7 +24,7 @@
               id="pass1"
               minlength="10"
               required
-              placeholder="Passwort"
+              placeholder="Password"
             /><br />
             <label for="pass"></label><br />
             <input
@@ -32,7 +32,7 @@
               id="pass2"
               minlength="10"
               required
-              placeholder="Passwort 2nd time"
+              placeholder="Password 2nd time"
             /><br />
             <br />
             <!-- input
@@ -41,17 +41,15 @@
           onclick="ansValidation(event)"
           value="Sign Up"
           />-->
-            <button type="submit" id="btn">Show Password</button>
+            <button type="onclick" ="myFunction">Show Password</button>
           </form>
         </section>
-        <section>
-          <p id="equal">Passwords are equal <input type="checkbox" /></p>
-          <p id="lower">Lower Case Letters <input type="checkbox" /></p>
-          <p id="upper">Upper Case Letters <input type="checkbox" /></p>
-          <p id="numb">Contains Numbers <input type="checkbox" /></p>
-          <p id="chara">
-            At least 10 characters long <input type="checkbox" />
-          </p>
+        <section class="secondLay">
+          <p id="equal">Passwords are equal</p>
+          <p id="lower">Lower Case Letters</p>
+          <p id="upper">Upper Case Letters</p>
+          <p id="numb">Contains Numbers</p>
+          <p id="chara">At least 10 characters long</p>
         </section>
       </article>
     </main>
