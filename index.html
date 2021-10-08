@@ -13,20 +13,20 @@
         <h1>Password Check</h1>
       </header>
 
-      <form action="Password eingabe">
-        <label for="username"></label><br />
-        <input type="text" id="Username" /><br />
-        <label for="password"></label><br />
-        <input type="text" id="password" /><br />
+      <form action="passwordInput">
+        <label for="pass"></label><br />
+        <input type="password" id="pass" minlength="10" required /><br />
+        <label for="pass"></label><br />
+        <input type="password" id="pass" minlength="10" required /><br />
         <br />
-        <input type="submit" value="submit" />
+        <input type="submit" value="Show Password" />
       </form>
       <article>
-        <p id="equal"></p>
-        <p id="lower"></p>
-        <p id="upper"></p>
-        <p id="numb"></p>
-        <p id="chara"></p>
+        <p id="equal">Passwords are equal <input type="checkbox" /></p>
+        <p id="lower">Lower Case Letters <input type="checkbox" /></p>
+        <p id="upper">Upper Case Letters <input type="checkbox" /></p>
+        <p id="numb">Contains Numbers <input type="checkbox" /></p>
+        <p id="chara">At least 10 characters long <input type="checkbox" /></p>
       </article>
     </main>
     <script src="script.js"></script>
