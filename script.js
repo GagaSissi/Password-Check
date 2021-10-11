@@ -5,48 +5,83 @@ const inPutPass2 = document.getElementById("pass2");
 const forMular = document.getElementById("forM");
 const warnEle = document.getElementById("warn");
 
-forMular.addEventListener("submit", (e) => {
-  let messages = [];
-  if (inPutPass1.value === "" || inPutPass1.value) {
-    messages.push("Password is required");
+inPutPass1.addEventListener("keyup", passwCheck);
+inPutPass2.addEventListener("keyup", passwCheck);
+function passwCheck() {
+  passwEqual();
+  passwLowerCLetter();
+  passwUpperCLetter();
+  passwNumb();
+  passwTenLong();
+}
+
+function passwReset() {
+  const passwReset = document.getElementById(
+    "equal",
+    "lower",
+    "upper",
+    "numb",
+    "chara"
+  );
+  passwReset.innerText = "⭕";
+}
+
+// Passwort Check Equal
+function passwEqual() {
+  if (inPutPass1.value == inPutPass2.value) {
+    const equCheck = document.getElementById("equal");
+    equCheck.innerText = "🟢";
+    return true;
+  } else {
+    const equCheck = document.getElementById("equal");
+    equCheck.innerText = "⭕";
+    return false;
   }
-  if (inPutPass1.value.length <= 10) {
-    console.log("Password must contain 10 characters");
+}
+
+// Passwort Check Lower Case
+function passwLowerCLetter() {
+  let lowerCaseCheck = inPutPass1.value;
+  if (/[a-z]/.test(lowerCaseCheck)) {
+    const equCheck = document.getElementById("lower");
+    equCheck.innerText = "🟢";
+  } else {
+    const equCheck = document.getElementById("lower");
+    equCheck.innerText = "⭕";
   }
-  if (messages.length > 0) {
-    e.preventDefault;
-    console.log("Password ist über 0 Zeichen");
+}
+
+// Passwort Check Upper Case
+function passwUpperCLetter() {
+  let upperCaseCheck = inPutPass1.value;
+  if (/[A-Z]/.test(upperCaseCheck)) {
+    const equCheck = document.getElementById("upper");
+    equCheck.innerText = "🟢";
+  } else {
+    const equCheck = document.getElementById("upper");
+    equCheck.innerText = "⭕";
   }
-});
+}
 
-//Function for the equal check
-// function myFunction() {
-//   const inpObj = document.querySelector("#pass1");
-//   const inpObjValue = inpObj.value;
-//   console.log(inpObjValue);
-//   const inpObj2 = document.querySelector("#pass2");
-//   const inpObj2Value = inpObj2.value;
-//   console.log(inpObj2Value);
-//   if (inpObj != inpObj2) {
-//     alert("password has to be equal!");
-//     document.getElementById("pass1").focus();
-//     return false;
-//   }
-//   return true;
-// }
+// Passwort Check Number
+function passwNumb() {
+  let numbCheck = inPutPass1.value;
+  if (/[0-9]/.test(numbCheck)) {
+    const equCheck = document.getElementById("numb");
+    equCheck.innerText = "🟢";
+  } else {
+    const equCheck = document.getElementById("numb");
+    equCheck.innerText = "⭕";
+  }
+}
 
-// Showing Password in Cleartext
-// Weitere Vorgehensweise theoretisch -->document.getElementById("Button").disabled = true; setzen
-
-// const showHiddenButton = document.getElementById("btn");
-// showHiddenButton.addEventListener("click", myFunction);
-
-// function myFunction() {
-//   if (document.getElementById("btn").disabled == false) {
-//     document.getElementById("Passwort").type = "text";
-//     showHiddenButton.innerText = "Hidden Password";
-//   } else {
-//     document.getElementById("Passwort").type = "password";
-//     showHiddenButton.innerText = "Show Password";
-//   }
-// }
+// Passwort Check Ten Characters Long
+function passwTenLong() {
+  if (inPutPass1.value.length >= 10) {
+    const equCheck = document.getElementById("chara");
+    equCheck.innerText = "🟢";
+  } else {
+    const equCheck = document.getElementById("chara");
+    equCheck.innerText = "⭕";
+  }
+}

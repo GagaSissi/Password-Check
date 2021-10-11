@@ -19,18 +19,11 @@
         <section id="warnung" class="firstLay">
           <form id="forM" onsubmit="return false">
             <label for="pass"></label><br />
-            <input
-              type="password"
-              id="pass1"
-              required
-              placeholder="Password"
-            /><br />
+            <input type="password" id="pass1" placeholder="Password" /><br />
             <label for="pass"></label><br />
             <input
               type="password"
               id="pass2"
-              minlength="10"
-              required
               placeholder="Password 2nd time"
             /><br />
             <br />
@@ -38,11 +31,11 @@
           </form>
         </section>
         <section class="secondLay">
-          <p id="equal">Passwords are equal</p>
-          <p id="lower">Lower Case Letters</p>
-          <p id="upper">Upper Case Letters</p>
-          <p id="numb">Contains Numbers</p>
-          <p id="chara">At least 10 characters long</p>
+          <p>Passwords are equal <span id="equal">⭕</span></p>
+          <p>Lower Case Letter <span id="lower">⭕</span></p>
+          <p>Upper Case Letters <span id="upper">⭕</span></p>
+          <p>Contains Numbers <span id="numb">⭕</span></p>
+          <p>At least 10 characters long <span id="chara">⭕</span></p>
         </section>
       </article>
     </main>

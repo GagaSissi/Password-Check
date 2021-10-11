@@ -43,31 +43,6 @@ section {
   padding: 0;
 }
 
-p::after {
-  content: "⭕";
-}
-/* Gedankengang war die p´s auf negativ zu setzten, anzusteuern und auf positiv zu setzen.+/
-/*
-#equal::after {
-  content: "⭕";
-}
-
-#lower::after {
-  content: "⭕";
-}
-*/
-#upper::after {
-  content: "🟢";
-}
-/*
-#numb::after {
-  content: "⭕";
-}
-
-#chara::after {
-  content: "⭕";
-}
-*/
 /* Eingügen von MediaQuery, MobileFirst Grundausrichtung, Breakpoint bei 700px*/
 
 @media screen and (min-width: 700px) {
