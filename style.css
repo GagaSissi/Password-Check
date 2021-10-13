@@ -3,7 +3,6 @@
 }
 
 body {
-  transition: all 0.25s;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -20,23 +19,31 @@ header {
 
 article {
   font-size: 1rem;
+  display: grid;
+  justify-content: center;
 }
-button {
-  width: 58%;
-  background-color: black;
-  color: white;
+
+form {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-row-gap: 0.7rem;
+  place-self: center;
 }
 
 input {
   border: 2px solid black;
   border-radius: 2px;
+  max-width: 200px;
 }
 
 button {
   padding: 0;
   margin: 0;
-  border: 2px solid black;
+  border: 3px solid black;
   border-radius: 2px;
+  background-color: black;
+  color: white;
+  max-width: 200px;
 }
 section {
   margin: 0;
@@ -46,20 +53,12 @@ section {
 /* Eingügen von MediaQuery, MobileFirst Grundausrichtung, Breakpoint bei 700px*/
 
 @media screen and (min-width: 700px) {
-  body {
-    width: 100%;
-  }
-
   article {
     display: flex;
     justify-content: space-evenly;
   }
 
-  .secondLay {
+  .secondLayer {
     margin-left: 5em;
-  }
-
-  button {
-    width: 100%;
   }
 }
