@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password-Check</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Password Check</h1>
+      </header>
+      <article>
+        <section class="firstLayer">
+          <form onsubmit="return false">
+            <label></label>
+            <input type="password" id="password1" placeholder="Password" />
+            <label></label>
+            <input
+              type="password"
+              id="password2"
+              placeholder="Password 2nd time"
+            />
+            <button>Show Password</button>
+          </form>
+        </section>
+        <section class="secondLayer">
+          <p>Passwords are equal <span id="equal">⭕</span></p>
+          <p>Lower Case Letter <span id="lower">⭕</span></p>
+          <p>Upper Case Letters <span id="upper">⭕</span></p>
+          <p>Contains Numbers <span id="number">⭕</span></p>
+          <p>At least 10 characters long <span id="charactersTen">⭕</span></p>
+        </section>
+      </article>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
