@@ -3,85 +3,71 @@
 const inputPasswort1 = document.getElementById("password1");
 const inputPasswort2 = document.getElementById("password2");
 
-inputPasswort1.addEventListener("keyup", passwCheck);
-inputPasswort2.addEventListener("keyup", passwCheck);
-function passwCheck() {
-  passwEqual();
-  passwLowerCLetter();
-  passwUpperCLetter();
-  passwNumber();
-  passwTenLong();
-}
+const equalCheck = document.getElementById("equal");
+const lowerCaseCheck = document.querySelector("#lower");
+const upperCaseCheck = document.querySelector("#upper");
+const numbCheck = document.querySelector("#number");
+const tenlongCheck = document.querySelector("#charactersTen");
 
-function passwReset() {
-  const passwReset = document.getElementById(
-    "equal",
-    "lower",
-    "upper",
-    "number",
-    "charactersTen"
-  );
-  passwReset.innerText = "⭕";
-}
+inputPasswort1.addEventListener("keyup", passwEqual);
+inputPasswort2.addEventListener("keyup", passwEqual);
+
+// console.log(lowerCaseCheck);
 
 // Passwort Check Equal
 function passwEqual() {
   if (inputPasswort1.value == inputPasswort2.value) {
-    const equCheck = document.getElementById("equal");
-    equCheck.innerText = "🟢";
-    return true;
+    equalCheck.innerText = "🟢";
+    passwLowerCLetter();
+    passwUpperCLetter();
+    passwNumber();
+    passwTenLong();
+    // return true;
+  } else {
+    equalCheck.innerText = "⭕";
+    lowerCaseCheck.innerText = "⭕";
+    upperCaseCheck.innerText = "⭕";
+    numbCheck.innerText = "⭕";
+    tenlongCheck.innerText = "⭕";
   }
-  // } else {
-  //   const equCheck = document.getElementById("equal");
-  //   equCheck.innerText = "⭕";
-  //   return false;
-  // }
 }
 
 // Passwort Check Lower Case
 function passwLowerCLetter() {
-  let lowerCaseCheck = inputPasswort1.value;
-  if (/[a-z]/.test(lowerCaseCheck)) {
-    const equCheck = document.getElementById("lower");
-    equCheck.innerText = "🟢";
+  // const lowerCaseCheck = inputPasswort1.value;
+  if (/[a-z]/.test(inputPasswort1.value)) {
+    lowerCaseCheck.innerText = "🟢";
   } else {
-    const equCheck = document.getElementById("lower");
-    equCheck.innerText = "⭕";
+    lowerCaseCheck.innerText = "⭕";
   }
 }
 
 // Passwort Check Upper Case
 function passwUpperCLetter() {
-  let upperCaseCheck = inputPasswort1.value;
-  if (/[A-Z]/.test(upperCaseCheck)) {
-    const equCheck = document.getElementById("upper");
-    equCheck.innerText = "🟢";
+  // let upperCaseCheck = inputPasswort1.value;
+  if (/[A-Z]/.test(inputPasswort1.value)) {
+    upperCaseCheck.innerText = "🟢";
   } else {
-    const equCheck = document.getElementById("upper");
-    equCheck.innerText = "⭕";
+    upperCaseCheck.innerText = "⭕";
   }
 }
 
 // Passwort Check Number
 function passwNumber() {
-  let numbCheck = inputPasswort1.value;
-  if (/[0-9]/.test(numbCheck)) {
-    const equCheck = document.getElementById("number");
-    equCheck.innerText = "🟢";
+  // let numbCheck = inputPasswort1.value;
+  if (/[0-9]/.test(inputPasswort1.value)) {
+    numbCheck.innerText = "🟢";
   } else {
-    const equCheck = document.getElementById("number");
-    equCheck.innerText = "⭕";
+    numbCheck.innerText = "⭕";
   }
 }
 
 // Passwort Check Ten Characters Long
 function passwTenLong() {
   if (inputPasswort1.value.length >= 10) {
-    const equCheck = document.getElementById("charactersTen");
-    equCheck.innerText = "🟢";
+    tenlongCheck.innerText = "🟢";
   } else {
-    const equCheck = document.getElementById("charactersTen");
-    equCheck.innerText = "⭕";
+    tenlongCheck.innerText = "⭕";
   }
 }
 
